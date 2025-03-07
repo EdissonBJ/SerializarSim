@@ -1,0 +1,120 @@
+<html lang='en'><head><link href='prism/prism.css' rel='stylesheet' /></head><body><script src='prism/prism.js'></script><body><div><pre><code class='language-html'>&lt;html xmlns:ng="" xmlns:uee="" xmlns:ui="" xmlns:bes=""&gt;<br/>
+ &lt;head&gt;<br/>
+  &lt;style type="text/css"&gt;@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}&lt;/style&gt;<br/>
+  &lt;title&gt;&lt;/title&gt;<br/>
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br/>
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;&lt;!-- &lt;link rel="shortcut icon" type="image/ico" href="resource.root/bes/sm/login/img/favicon_jsmobile.png" /&gt; --&gt;<br/>
+  &lt;link rel="shortcut icon" type="image/ico" href="resource.root/bes/sm/login/img/workbenchIcon/logo_cz.png"&gt;&lt;!-- &lt;link rel="shortcut icon" type="image/ico" href="/logo_cz.ico" /&gt; --&gt;<br/>
+  &lt;link rel="stylesheet" type="text/css" href="resource.root/bes/sm/login/css/base_ctz.css"&gt;<br/>
+  &lt;link rel="stylesheet" type="text/css" href="resource.root/bes/sm/login/css/component_ctz.css"&gt;<br/>
+  &lt;link rel="stylesheet" href="resource.root/bes/sm/login/css/pages.css"&gt;<br/>
+  &lt;link rel="stylesheet" href="resource.root/bes/sm/login/css/Radio.css"&gt;<br/>
+  &lt;link rel="stylesheet" href="resource.root/bes/sm/login/css/Checkbox.css"&gt;<br/>
+  &lt;link rel="stylesheet" href="resource.root/bes/sm/login/css/Droplist.css"&gt;<br/>
+  &lt;link rel="stylesheet" href="resource.root/bes/sm/login/css/Charts.css"&gt;<br/>
+  &lt;link rel="stylesheet" href="resource.root/bes/sm/login/css/ProcessBar.css"&gt;<br/>
+  &lt;link rel="stylesheet" href="resource.root/bes/sm/login/css/fast-entry.css"&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/themes/pc/app/app.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/sm/login/js/Droplist.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/sm/login/js/Checkbox.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/sm/login/js/Radio.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/sm/login/js/Pages.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/sm/login/js/chart/getColor.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/sm/login/js/chart/Cords.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/sm/login/js/chart/CircleProcess.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/sm/login/js/ProcessBar.js"&gt;&lt;/script&gt;<br/>
+ &lt;/head&gt;<br/>
+ &lt;body novalidate&gt;&lt;uee:include src="'pages/Framework_ctz.html'"&gt;&lt;/uee:include&gt; &lt;uee:fire init="" script="initTitle(this)" class="ng-scope"&gt;<br/>
+   &lt;script&gt;<br/>
+			function initTitle($Scope) {<br/>
+				//var title = window.$UEE.i18n('SM.LOGIN.TITLE.PORTAL_TITLE');<br/>
+				//$(document).attr("title", title);<br/>
+				<br/>
+				var $Model = $Scope.$Model;<br/>
+				<br/>
+				// ��ʱ�ȶ�u-token<br/>
+				$Model.check_CurrentUToken = getCookie('u-token');<br/>
+				<br/>
+				$Model.intervalId = setInterval("isSameUToken()", 5000);<br/>
+			}<br/>
+			<br/>
+			function getCookie(name) {<br/>
+				var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");<br/>
+				if (arr = document.cookie.match(reg))<br/>
+					return unescape(arr[2]);<br/>
+				else<br/>
+					return null;<br/>
+			}<br/>
+			<br/>
+			function isSameUToken(){<br/>
+				var $Scope = $(document).scope();<br/>
+				var $Model = $Scope.$Model;<br/>
+				var check_LatestUToken = getCookie('u-token');<br/>
+				if (check_LatestUToken != undefined && check_LatestUToken != $Model.check_CurrentUToken){<br/>
+					var $Fire = $Scope.$Get('$Fire');<br/>
+					var i18n = $UEE.i18n;<br/>
+					<br/>
+					//cookie��utoken����������ʱ��<br/>
+					clearInterval($Model.intervalId);<br/>
+					<br/>
+					$Fire({<br/>
+						'service' : '/SMLoginAction/getloginid',<br/>
+						target : "$Model.check_LatestLoginId"<br/>
+					}, $Scope).onafter(function(){<br/>
+						var check_CurrentLoginId = $Model.userInfo.loginId;<br/>
+						var check_LatestLoginId = $Model.check_LatestLoginId;<br/>
+						<br/>
+						var title = "";<br/>
+						var info = "";<br/>
+						<br/>
+						//�����½�˺ű�����򵯳���ʾ�˺ű����ʾ��Ϣ����ȷ��ˢ��ҳ�棬�ر���ʾ�����ö�ʱ��<br/>
+						if (check_CurrentLoginId != check_LatestLoginId){<br/>
+							<br/>
+							title = i18n('SM.PORTAL.TITLE.RELOGIN');<br/>
+							info = i18n('SM.PORTAL.TIPS.RELOGIN').replace("{oldLoginId}", check_CurrentLoginId).replace("{newLoginId}", check_LatestLoginId);<br/>
+							/*$(document).scope().$UI.msgbox.info(title, info, function(){<br/>
+								window.location.reload();<br/>
+							 });<br/>
+							 */<br/>
+							$(document).scope().$UI.msgbox.info(title, info, reloadPage, null, resetInterval);<br/>
+						}<br/>
+						else{<br/>
+							//�˺�û�б����ֱ���滻��ǰtoken����ֹ��ͣ������<br/>
+							$Model.check_CurrentUToken = check_LatestUToken;<br/>
+							resetInterval();<br/>
+						}<br/>
+						<br/>
+					}).onerror(function(){<br/>
+						var errTitle = $UEE.i18n('SM.PORTAL.TITLE.RELOGIN');<br/>
+						var errMsg = $UEE.i18n('SM.PORTAL.MSG.CHECK_DOMAIN_FAILED');<br/>
+						$(document).scope().$UI.msgbox.info(errTitle, errMsg, reloadPage, reloadPage, reloadPage);<br/>
+						return false;<br/>
+					});<br/>
+				}<br/>
+			}<br/>
+<br/>
+			function resetInterval(){<br/>
+				$Model.intervalId = setInterval("isSameUToken()", 5000);<br/>
+			}<br/>
+<br/>
+			function reloadPage(){<br/>
+				window.location.reload();<br/>
+			}<br/>
+<br/>
+			&lt;/script&gt;<br/>
+  &lt;/uee:fire&gt;<br/>
+  &lt;div class="bf_tips"&gt;<br/>
+   &lt;div class="head left"&gt;&lt;/div&gt;<br/>
+   &lt;div class="head right"&gt;&lt;/div&gt;<br/>
+   &lt;div class="head middle"&gt;&lt;/div&gt;<br/>
+   &lt;div class="mid"&gt;<br/>
+    &lt;div class="bf_tips_container"&gt;<br/>
+     &lt;div class="bf_tips_content"&gt;&lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="foot left"&gt;&lt;/div&gt;<br/>
+   &lt;div class="foot right"&gt;&lt;/div&gt;<br/>
+   &lt;div class="foot middle"&gt;&lt;/div&gt;<br/>
+  &lt;/div&gt;<br/>
+ &lt;/body&gt;<br/>
+&lt;/html&gt;</code></pre></div></body></html>
