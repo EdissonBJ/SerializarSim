@@ -1,2 +1,4 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Login de usuario","Login de usuario exitoso","FAILURE","2025-02-12T12:44:37.8507651-05:00[America/Bogota]","0.0","27.82"
+"Login de usuario","Login fallido por credenciales inválidas","PENDING","2025-08-29T08:12:54.3768368-05:00[America/Bogota]","0.0","10.07"
+"Login de usuario","Usuario bloqueado","PENDING","2025-08-29T08:13:05.8319618-05:00[America/Bogota]","0.0","10.35"
+"Serialización de SIM","SIM ya registrada","PENDING","2025-08-29T08:13:37.7692367-05:00[America/Bogota]","0.0","11.81"

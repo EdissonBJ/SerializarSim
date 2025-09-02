@@ -10,7 +10,7 @@ public class PaginaInicioUI {
     public static final Target TXT_CLAVE = Target.the("ingresar clave").located(By.id("ipt_pwd"));
     public static final Target BTN_INGRESAR = Target.the("boton ingresar").located(By.id("loginBtn"));
 
-    public static final Target MSJ_LOGIN = Target
-            .the("Campo de búsqueda de información")
-            .locatedBy("//input[@id='search_info_text']");
+   public static final Target DIV_VENTA_OFERTA = Target.the("Venta Oferta Individual y Empaquetada")
+            .located(By.xpath("//div[@class='item_title' and text()='Venta Oferta Individual y Empaquetada (Fija)']"));
+
 }

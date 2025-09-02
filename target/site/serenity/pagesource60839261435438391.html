@@ -1,0 +1,167 @@
+<html lang='en'><head><link href='prism/prism.css' rel='stylesheet' /></head><body><script src='prism/prism.js'></script><body><div><pre><code class='language-html'>&lt;html xmlns:ng="" xmlns:uee="" xmlns:ui="" xmlns:bes=""&gt;<br/>
+ &lt;head&gt;<br/>
+  &lt;style type="text/css"&gt;@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}&lt;/style&gt;<br/>
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=8"&gt;<br/>
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;<br/>
+  &lt;title&gt;workbench&lt;/title&gt;<br/>
+  &lt;link rel="stylesheet" type="text/css" href="resource.root/bes/sm/login/css/workbench.css?8.2.10.2.190830.ome.en-RELEASE-202501142357"&gt;<br/>
+  &lt;link rel="stylesheet" type="text/css" href="resource.root/bes/sm/login/css/base.css?8.2.10.2.190830.ome.en-RELEASE-202501142357"&gt;<br/>
+ &lt;/head&gt;<br/>
+ &lt;body style="background: #F0F3F7;" novalidate&gt;&lt;uee:fire init="" script="initGadget(this)" class="ng-scope"&gt;&lt;/uee:fire&gt;<br/>
+  &lt;div class="main_inner" id="workbenchdiv"&gt;&lt;uee:fire init="" script="initI18n(this)" class="ng-scope"&gt;<br/>
+    &lt;script&gt;<br/>
+				function initI18n() {<br/>
+					var isEn = true;<br/>
+					this.$Model.fastEnter = $UEE.i18n('SM.LOGIN.LABEL.FAST_ENTER');<br/>
+					this.$Model.settings = $UEE.i18n('SM.LOGIN.LABEL.SETTINGS');<br/>
+					this.$Model.login = $UEE.i18n('SM.LOGIN.LABEL.CUS_LOGIN');<br/>
+					this.$Model.activity = $UEE.i18n('SM.LOGIN.LABEL.ACTIVITY');<br/>
+					this.$Model.recharge = $UEE.i18n('SM.LOGIN.LABEL.RECHARGE');<br/>
+					this.$Model.addFastMenu = $UEE.i18n('SM.LOGIN.LABEL.ADD_FAST_MENU');<br/>
+				}<br/>
+			&lt;/script&gt;<br/>
+   &lt;/uee:fire&gt;<br/>
+   &lt;div class="uee-gadget ng-scope bes-sm-sectionleft" name="bes:sm-sectionleft"&gt;<br/>
+    &lt;!-- ueeScript: src=/oc/bes/sm/portal/gadget/v1/bes-sm-sectionleft/behavior/sectionleft.js--&gt;<br/>
+    &lt;div class="workbench has_w_right ng-scope" id="sectionleftdiv"&gt;&lt;uee:fire init="" script="sectionLeft.init(this)" class="ng-scope"&gt;&lt;/uee:fire&gt;<br/>
+     &lt;div class="uee-gadget ng-scope bes-sm-fast-entry-parent" name="bes:sm-fast-entry-parent"&gt;&lt;!----å¿«æ?·å…¥å?£ start----&gt;<br/>
+      &lt;div class="panel panel_entrance ng-scope"&gt;<br/>
+       &lt;div class="uee-gadget ng-scope bes-sm-fast-entry" name="bes:sm-fast-entry"&gt;<br/>
+        &lt;!-- ueeScript: src=resource.root/bes/sm/gadget/bes-sm-fast-entry/behavior/sm-fast-entry.js--&gt;&lt;!-- ueeScript: src=resource.root/bes/sm/gadget/bes-sm-fast-entry/behavior/sortable.js--&gt; &lt;!-- ueeGadgetAttr: name=xtype--&gt;<br/>
+        &lt;link ng-href="resource.root/bes/sm/gadget/bes-sm-fast-entry/css/sm-fast-entry.css" type="text/css" rel="stylesheet" class="ng-scope" href="resource.root/bes/sm/gadget/bes-sm-fast-entry/css/sm-fast-entry.css"&gt;&lt;uee:fire init="" script="initFastEntry(this)" class="ng-scope"&gt;&lt;/uee:fire&gt;<br/>
+        &lt;div class="pl_title ng-scope"&gt;&lt;span class="section_title ng-binding" ng-bind="$Model.fastEnter"&gt;Entrada Rapida&lt;/span&gt;<br/>
+         &lt;div class="fr customMade" id="install"&gt;&lt;img src="../img/set_icon.png"&gt;&lt;span class="font_gray ng-binding" ng-bind="$Model.settings"&gt;Ajustes&lt;/span&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="clear"&gt;&lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="entrance ng-scope" id="entrance" style="height: 304px; margin-top: -10px;"&gt;<br/>
+         &lt;ul class="sortable_block"&gt;<br/>
+          &lt;li draggable="true"&gt;<br/>
+           &lt;div class="list_sortable"&gt;<br/>
+            &lt;div class="entrance_item" align="center" style="margin: 9px" innerid="60131201608191600"&gt;<br/>
+             &lt;div class="item_img"&gt;<br/>
+              &lt;img src="resource.root/bes/sm/login/img/workbenchIcon/workbenchIcon_cz.png"&gt;&lt;span class="guide_close"&gt;&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="item_title" title="Vista 360Â° Individual"&gt;<br/>
+              Vista 360Â° Individual<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;&lt;/li&gt;<br/>
+          &lt;li draggable="true"&gt;<br/>
+           &lt;div class="list_sortable"&gt;<br/>
+            &lt;div class="entrance_item" align="center" style="margin: 9px" innerid="60131004"&gt;<br/>
+             &lt;div class="item_img"&gt;<br/>
+              &lt;img src="resource.root/bes/ad/themes/default/resource/images/shangpindinggou.png"&gt;&lt;span class="guide_close"&gt;&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="item_title" title="Venta Nueva"&gt;<br/>
+              Venta Nueva<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;&lt;/li&gt;<br/>
+          &lt;li draggable="true"&gt;<br/>
+           &lt;div class="list_sortable"&gt;<br/>
+            &lt;div class="entrance_item" align="center" style="margin: 9px" innerid="60131888"&gt;<br/>
+             &lt;div class="item_img"&gt;<br/>
+              &lt;img src="resource.root/bes/sm/login/img/workbenchIcon/workbenchIcon_cz.png"&gt;&lt;span class="guide_close"&gt;&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="item_title" title="Solicitar Portabilidad"&gt;<br/>
+              Solicitar Portabilidad<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;&lt;/li&gt;<br/>
+          &lt;li draggable="true"&gt;<br/>
+           &lt;div class="list_sortable"&gt;<br/>
+            &lt;div class="entrance_item" align="center" style="margin: 9px" innerid="6013120180322134155"&gt;<br/>
+             &lt;div class="item_img"&gt;<br/>
+              &lt;img src="resource.root/bes/sm/login/img/workbenchIcon/workbenchIcon_cz.png"&gt;&lt;span class="guide_close"&gt;&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="item_title" title="Venta Oferta Individual y Empaquetada (Fija)"&gt;<br/>
+              Venta Oferta Individual y Empaquetada (Fija)<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;&lt;/li&gt;<br/>
+          &lt;li draggable="true"&gt;<br/>
+           &lt;div class="list_sortable"&gt;<br/>
+            &lt;div class="entrance_item" align="center" style="margin: 9px" innerid="6013120171103100645"&gt;<br/>
+             &lt;div class="item_img"&gt;<br/>
+              &lt;img src="resource.root/bes/sm/login/img/workbenchIcon/workbenchIcon_cz.png"&gt;&lt;span class="guide_close"&gt;&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="item_title" title="Vista 360Â° NIT"&gt;<br/>
+              Vista 360Â° NIT<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;&lt;/li&gt;<br/>
+          &lt;li draggable="true"&gt;<br/>
+           &lt;div class="list_sortable"&gt;<br/>
+            &lt;div class="entrance_item" align="center" style="margin: 9px" innerid="202001001"&gt;<br/>
+             &lt;div class="item_img"&gt;<br/>
+              &lt;img src="resource.root/bes/sm/login/img/workbenchIcon/workbenchIcon_cz.png"&gt;&lt;span class="guide_close"&gt;&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="item_title" title="CBS"&gt;<br/>
+              CBS<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;&lt;/li&gt;<br/>
+          &lt;li draggable="true"&gt;<br/>
+           &lt;div class="list_sortable"&gt;<br/>
+            &lt;div class="entrance_item" align="center" style="margin: 9px" innerid="60131100"&gt;<br/>
+             &lt;div class="item_img"&gt;<br/>
+              &lt;img src="resource.root/bes/sm/login/img/workbenchIcon/workbenchIcon_cz.png"&gt;&lt;span class="guide_close"&gt;&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="item_title" title="Actualizar serial de recurso"&gt;<br/>
+              Actualizar serial de recurso<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;&lt;/li&gt;<br/>
+          &lt;li draggable="true"&gt;<br/>
+           &lt;div class="list_sortable"&gt;<br/>
+            &lt;div class="entrance_item" align="center" style="margin: 9px" innerid="20171101110201"&gt;<br/>
+             &lt;div class="item_img"&gt;<br/>
+              &lt;img src="resource.root/bes/sm/login/img/workbenchIcon/workbenchIcon_cz.png"&gt;&lt;span class="guide_close"&gt;&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="item_title" title="Venta NIT"&gt;<br/>
+              Venta NIT<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;&lt;/li&gt;<br/>
+          &lt;li draggable="true" style="display: none;"&gt;<br/>
+           &lt;div class="list_sortable"&gt;<br/>
+            &lt;div class="end_item notSor" align="center" style="margin: 9px"&gt;<br/>
+             &lt;div class="item_img"&gt;&lt;img src="../img/add_guide.png"&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="item_title visibility" title="Agregar menÃº rÃ¡pido"&gt;<br/>
+              Agregar menÃº rÃ¡pido<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;&lt;/li&gt;<br/>
+         &lt;/ul&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="list-switch-main ng-scope" id="selectPageDiv" style="display:none"&gt;<br/>
+         &lt;span class="list-switch-rect cur" id="pageSpan0"&gt;&lt;/span&gt;<br/>
+        &lt;/div&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;&lt;!----å¿«æ?·å…¥å?£ end----&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+  &lt;/div&gt;<br/>
+  &lt;script&gt;!function(window,angular){if(angular){var srcCaches,buildVersion=window.$UEE.version,getVersionUrl=window.$UEE.getVersionUrl=function(url){if(buildVersion){var searchPosion=url.indexOf("?");return url=-1!=searchPosion?url.slice(0,searchPosion+1)+buildVersion+"&"+url.slice(searchPosion+1):url+"?"+buildVersion}return url};angular.module("uee.ui").directive("ueeScript",function($cacheFactory){function syncLoadjs(src){jQuery.ajax({url:src,type:"GET",dataType:"script",async:!1,global:!1,"throws":!0})}return srcCaches=srcCaches||$cacheFactory("srcCaches"),{restrict:"E",transclude:"element",link:function($scope,element,attrs,controller,linker){linker($scope,function(clone){$.globalEval(clone[0].innerHTML),$(clone[0]).remove()});var src=attrs.ngSrc||attrs.src;src=getVersionUrl(src);var jQueryAjaxSettingsCache=jQuery.ajaxSettings.cache;jQuery.ajaxSettings.cache=!0;var srcCache=srcCaches.get(src);!srcCache&&$.contains(document,element[0])&&(src&&syncLoadjs(src),srcCaches.put(src,src)),jQuery.ajaxSettings.cache=jQueryAjaxSettingsCache,element[0].textContent=" ueeScript: src="+src}}},!0),angular.module("ng").directive("ngHref",function(){return{priority:99,link:function(scope,element,attr){var name="href";"[object SVGAnimatedString]"===Object.prototype.toString.call(element.prop("href"))&&(name="xlinkHref",attr.$attr[name]="xlink:href"),attr.$observe("ngHref",function(value){return value?(attr.$set(name,$.nodeName(element[0],"link")?getVersionUrl(value):value),void 0):(attr.$set(name,null),void 0)})}}},!0),angular.module("ng").directive("ngSrc",function(){return{priority:99,link:function(scope,element,attr){var name="src";attr.$observe("ngSrc",function(value){attr.$set(name,$.nodeName(element[0],"script")?getVersionUrl(value):value)})}}},!0)}}(window,window.angular);&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/themes/pc/app/app.js?8.2.10.2.190830.ome.en-RELEASE-202501142357"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/sm/login/js/tabset.js?8.2.10.2.190830.ome.en-RELEASE-202501142357"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/sm/login/js/bes.portal.tabpanel.client.js?8.2.10.2.190830.ome.en-RELEASE-202501142357"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="../js/workbench.js?8.2.10.2.190830.ome.en-RELEASE-202501142357"&gt;&lt;/script&gt;<br/>
+  &lt;div class="bf_tips"&gt;<br/>
+   &lt;div class="head left"&gt;&lt;/div&gt;<br/>
+   &lt;div class="head right"&gt;&lt;/div&gt;<br/>
+   &lt;div class="head middle"&gt;&lt;/div&gt;<br/>
+   &lt;div class="mid"&gt;<br/>
+    &lt;div class="bf_tips_container"&gt;<br/>
+     &lt;div class="bf_tips_content"&gt;&lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="foot left"&gt;&lt;/div&gt;<br/>
+   &lt;div class="foot right"&gt;&lt;/div&gt;<br/>
+   &lt;div class="foot middle"&gt;&lt;/div&gt;<br/>
+  &lt;/div&gt;<br/>
+ &lt;/body&gt;<br/>
+&lt;/html&gt;</code></pre></div></body></html>

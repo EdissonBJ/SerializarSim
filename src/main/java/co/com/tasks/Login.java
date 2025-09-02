@@ -28,11 +28,7 @@ public class Login implements Task {
         actor.attemptsTo(
                 Enter.theValue(leerExcel.get(0).get("Usuario")).into(TXT_USUARIO),
                 Enter.theValue(leerExcel.get(0).get("Clave")).into(TXT_CLAVE),
-                Click.on(BTN_INGRESAR),
-                WaitUntil.the(MSJ_LOGIN, isVisible()).forNoMoreThan(30).seconds(),
-                Click.on(MSJ_LOGIN)
-
-
+                Click.on(BTN_INGRESAR)
 
         );
 

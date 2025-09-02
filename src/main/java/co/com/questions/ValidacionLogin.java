@@ -8,8 +8,8 @@ public class ValidacionLogin implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        String mensajeObtenido = PaginaUsuarioUI.MSJ_LOGIN.resolveFor(actor).getText();
-        return "Vista 360° Individual".equals(mensajeObtenido);
+        String mensajeObtenido = PaginaUsuarioUI.DIV_VENTA_OFERTA.resolveFor(actor).getText();
+        return  mensajeObtenido.contains("Venta Oferta Individual y Empaquetada (Fija)");
     }
 
     public static Question<Boolean> validarLogin() {

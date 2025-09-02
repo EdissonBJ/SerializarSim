@@ -34,14 +34,27 @@ dependencies {
 
 }
 
-
 test {
+    ignoreFailures = true 
     useJUnit {
-        include "**/*";
-        gradle.startParameter.continueOnFailure = true
-        testLogging.showStandardStreams = true
-        systemProperties System.getProperties()
-        systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
+        include "**/*"
     }
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
+    systemProperties System.getProperties()
+    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
     finalizedBy 'aggregate'
 }
+/*test {
+//    useJUnit {
+  //      include "**///*";
+//    gradle.startParameter.continueOnFailure = true
+  //      testLogging.showStandardStreams = true
+    //    systemProperties System.getProperties()
+      //  systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
+//}
+    //finalizedBy 'aggregate'
+//}

@@ -1,0 +1,391 @@
+<html lang='en'><head><link href='prism/prism.css' rel='stylesheet' /></head><body><script src='prism/prism.js'></script><body><div><pre><code class='language-html'>&lt;html xmlns:ng="" xmlns:uee="" xmlns:ui="" xmlns:bes=""&gt;<br/>
+ &lt;head&gt;<br/>
+  &lt;style type="text/css"&gt;@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}&lt;/style&gt;<br/>
+  &lt;title&gt;Portal BES Página de Inicio de Sesión&lt;/title&gt;<br/>
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br/>
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;<br/>
+  &lt;style type="text/css"&gt;@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}&lt;/style&gt;&lt;!-- &lt;link rel="shortcut icon" type="image/ico" href="resource.root/bes/sm/login/img/favicon_jsmobile.png" /&gt; --&gt;<br/>
+  &lt;link rel="shortcut icon" type="image/ico" href="resource.root/bes/sm/login/img/workbenchIcon/logo_cz.png"&gt;&lt;!-- &lt;link rel="shortcut icon" type="image/ico" href="/logo_cz.ico" /&gt; --&gt;<br/>
+  &lt;link type="text/css" href="resource.root/themes/pc/app/app.css" rel="stylesheet"&gt;<br/>
+  &lt;link type="text/css" href="resource.root/bes/sm/login/css/Droplist.css" rel="stylesheet"&gt;&lt;!--  <br/>
+		&lt;link type="text/css" href="resource.root/bes/sm/login/css/bf_tips.css" rel="stylesheet"&gt;<br/>
+		--&gt;<br/>
+  &lt;script&gt;<br/>
+		    /* 必须放在app.js前面加载,只加载login界面的sync.js，不加载app.js里面的sync.js */<br/>
+            $UEE = {};<br/>
+            $UEE.$I18nLoaded = true;<br/>
+        &lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/themes/pc/app/app.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/sm/login/js/Droplist.js"&gt;&lt;/script&gt;<br/>
+  &lt;script&gt;<br/>
+		    /* 解决登录界面加载两次sync.js的问题 */<br/>
+            var ulocale = jQuery.cookie('bes_login_locale');<br/>
+    <br/>
+            var pathname = window.location.pathname;<br/>
+            var context = '/' + pathname.split('/')[1];<br/>
+            <br/>
+            jQuery.ajax({<br/>
+                url: context + "/u-dyn/sync.js?u-locale=" + (ulocale ? ulocale : "en_US"),<br/>
+                type: "GET",<br/>
+                dataType: "script",<br/>
+                async: false,<br/>
+                global: false,<br/>
+                cache:true,<br/>
+                "throws": true,<br/>
+             });<br/>
+        &lt;/script&gt;<br/>
+  &lt;style&gt;<br/>
+		*{<br/>
+			margin:0px;<br/>
+			padding: 0px;<br/>
+		}<br/>
+		html,body{<br/>
+			height:100%;<br/>
+		}<br/>
+		.uee-page{<br/>
+			height: 100%;<br/>
+			background: url(resource.root/bes/sm/login/img/login-bg.jpg) no-repeat center center;<br/>
+		}<br/>
+		#div_top_pho{<br/>
+			text-align: center;<br/>
+		}<br/>
+		/* #div_top_pho img{<br/>
+			margin-bottom: 26px;<br/>
+		} */<br/>
+		#div_center {width: 900px;height: 100%;margin: 0px auto;position:relative}<br/>
+		#div_login{top:50%;width:100%;background-color:#f3f3f4;position:absolute;height:604px;left: -1px;margin-top: -302px;}<br/>
+		#div_left {float: left;width: 900px;margin-top: 50px;}<br/>
+		#div_error {color: red;padding: 8px 0px;font-size: 12px;visibility: hidden;text-align: center;}<br/>
+		#div_ipt {width: 100%;}<br/>
+		#div_ipt input {width: 285px;height: 24px;font-size: 16px;background: transparent;border:none;}<br/>
+		#div_ipt input:focus,#div_ipt input:hover{box-shadow:none;}<br/>
+		#langSelect {width: 174px;height: 24px;}<br/>
+		/* 2017-09-26 将图形验证码的宽度去掉让其自适应   */<br/>
+		#validateimg {/* width:60px; */height:30px;border:0px;}<br/>
+		#refreshImg {width:14px;height:14px;cursor:pointer;align:absmiddle}<br/>
+		.clear {clear: both;}<br/>
+		.input-box{margin-left:0px;}<br/>
+		.uee-field .uee-button{background: #5BC500;border:none;margin-left: 264px;margin-top: 10px;<br/>
+			width:351px;height:50px;line-height: 50px;text-align: center;color: #fff;border-radius: 3px;font-size: 14px;box-shadow:none;<br/>
+		}<br/>
+		#uee-name,#uee-password,#vcodeField{<br/>
+			border-top:1px solid #d1d3d5;<br/>
+			border-left:1px solid #d1d3d5;<br/>
+			border-right:1px solid #f6f6f7;<br/>
+			border-bottom:1px solid #f6f6f7;<br/>
+			background: #ebedef;<br/>
+			/* width: 349px;2017-09-26 增加输入框的长度   */<br/>
+			width: 450px;<br/>
+		    display: block;<br/>
+		    float: none;<br/>
+		    height: 48px;<br/>
+		    line-height: 48px;<br/>
+		    margin: 20px auto 0px;<br/>
+		}<br/>
+		#uee-name .uee-field-label,<br/>
+		#uee-password .uee-field-label,<br/>
+		#vcodeField .uee-field-label{<br/>
+			width: auto !important;<br/>
+			margin-top: 14px;<br/>
+		    margin-left: 10px;<br/>
+		    color: #6f7479；<br/>
+		}<br/>
+		.uee-field-body{<br/>
+			margin-top: 14px !important;<br/>
+		    margin-left: 10px;<br/>
+		}<br/>
+		.uee-field-req{<br/>
+			display: none;<br/>
+		}<br/>
+		.forget_pwd{<br/>
+		    width: 351px !important;<br/>
+		    margin: 0 auto !important;<br/>
+		    float: none !important;<br/>
+		    text-align: right;<br/>
+		    height:24px;<br/>
+		}<br/>
+		.forgetPwdLabel{<br/>
+		    color: #0ea5f3 !important;<br/>
+		    font-size: 12px;<br/>
+		    margin-top: 6px;<br/>
+    		margin-bottom: 20px;<br/>
+		}<br/>
+		a.forgetPwdLabel:hover{<br/>
+			color: #0ea5f3 !important;<br/>
+			text-decoration: none;<br/>
+		}<br/>
+		.uee-en-ch{<br/>
+			margin-top: 0px;<br/>
+			text-align: center;<br/>
+			margin-bottom: 14px;<br/>
+		}<br/>
+		.uee-en-ch a{<br/>
+			color: #0ea5f3 !important;<br/>
+			font-size: 12px;<br/>
+			margin:0 14px;<br/>
+			text-decoration: none;<br/>
+		}<br/>
+		.uee-footer{<br/>
+			width: 100%;<br/>
+			text-align: right;<br/>
+			position: absolute;<br/>
+			bottom:40px;<br/>
+			right: 85px;<br/>
+		}<br/>
+		.uee-footer a{<br/>
+			color: #0ea5f3;<br/>
+			font-size: 14px;<br/>
+			text-decoration: none;<br/>
+			padding: 0px 15px;<br/>
+			text-shadow: 0px 0px 1px rgba(255,255,255,.5);<br/>
+		}<br/>
+		.uee-copyright{<br/>
+			width: 920px;<br/>
+			text-align: center;<br/>
+			position: absolute;<br/>
+			top: 1050px;<br/>
+			color:#36383c;<br/>
+		}<br/>
+		.uee-button:focus{<br/>
+			color: #fff !important;<br/>
+			border:none !important;<br/>
+		}<br/>
+		.en-ch-toggle{<br/>
+			width: 351px;<br/>
+		    margin: 0 auto;<br/>
+		    text-align: center;<br/>
+		    margin-top: -10px;<br/>
+		}<br/>
+		.en-ch-toggle .uee-en-ch{<br/>
+			width: 66px;<br/>
+			display: inline-block;<br/>
+		}<br/>
+		.en-ch-toggle .uee-en-ch a{<br/>
+			font-size: 14px;<br/>
+			color: #91989e !important;<br/>
+			margin:0px;<br/>
+		}<br/>
+		.en-ch-toggle .uee-en-ch a.active{<br/>
+			color: #0ea5f3 !important;<br/>
+		}<br/>
+		<br/>
+		.login-form-droplist .form-droplist{<br/>
+			margin-left: 274px;<br/>
+    		display: inline-block;<br/>
+			width: auto;<br/>
+			margin-top: 23px;<br/>
+			margin-bottom: 15px;<br/>
+			font-family:  "Myriad","Arial";<br/>
+		}<br/>
+		.login-form-droplist .Droplist .DroplistHeader{<br/>
+			border: none;<br/>
+		    background: transparent;<br/>
+		    padding: 0px;<br/>
+		    height: 24px;<br/>
+		}<br/>
+		<br/>
+		.Droplist .DroplistHeader input.inputbox{<br/>
+		    margin-top: 0px;<br/>
+		    font-size: 14px !important;<br/>
+		    color: #0ea5f3;<br/>
+		    line-height: 24px;<br/>
+		    width: 100% !important;<br/>
+		    margin-left: -50px;   /* add 2017-09-26  左对齐  */<br/>
+		}<br/>
+		.Droplist .trigger{<br/>
+			border-left: none;<br/>
+			background: url(resource.root/bes/sm/login/img/tabpanel_menu.png) center center no-repeat;<br/>
+			top:1px;<br/>
+			right: 24px;<br/>
+			width: 10px;<br/>
+		}<br/>
+		.DroplistOption{<br/>
+			border: #e1e3e5 solid 1px;<br/>
+			border-radius: 0px;<br/>
+			box-shadow: none;<br/>
+			padding: 0px;<br/>
+		}<br/>
+		.DroplistOption li{<br/>
+			height: 40px;<br/>
+		    line-height: 40px;<br/>
+		    color: #6f7479;<br/>
+		    border-top: none;<br/>
+		    padding-left: 20px;<br/>
+		    padding-right: 20px;<br/>
+		}<br/>
+		.DroplistOption .selected{<br/>
+			background-color: #f2f5f7;<br/>
+    		color: #36383c;<br/>
+		}<br/>
+		.DroplistOption li:hover{<br/>
+			background-color: #f2f5f7;<br/>
+    		color: #36383c;<br/>
+		}<br/>
+		.DroplistOption li &gt; ins, .DroplistOption li &gt; span {<br/>
+		    font-size: 14px;<br/>
+		    font-family: "Myriad","Arial";<br/>
+		}<br/>
+		#accountTypeSelect {<br/>
+			height: 18px;<br/>
+			width: 285px;<br/>
+			margin-left: 2px;<br/>
+			font-family: "微软雅黑";<br/>
+			font-size: 14px;<br/>
+			color: #0ea5f3;<br/>
+			background: transparent;<br/>
+			border: none;<br/>
+		}<br/>
+		&lt;/style&gt;<br/>
+ &lt;/head&gt;<br/>
+ &lt;body novalidate&gt;&lt;!--start uee解决u-locale问题 --&gt; &lt;!--&lt;uee:fire init script="exportFile()"&gt;&lt;/uee:fire&gt;<br/>
+<br/>
+		&lt;script&gt;<br/>
+			function exportFile(){<br/>
+			var ulocale = jQuery.cookie('bes_login_locale');<br/>
+			$UEE.syncLoadjs("resource.root/u-dyn/sync.js" + (ulocale ? ("?u-locale=" + ulocale) : "zh_CN"));<br/>
+		}<br/>
+		&lt;/script&gt; --&gt; &lt;!--end uee解决u-locale问题 --&gt;<br/>
+  &lt;div class="uee-page" rendertime="render me cost 224ms"&gt;<br/>
+   &lt;div id="div_center" class="clear ng-scope"&gt;<br/>
+    &lt;div id="div_login"&gt;<br/>
+     &lt;div id="div_left"&gt;<br/>
+      &lt;div id="div_ipt"&gt;<br/>
+       &lt;div id="div_top_pho"&gt;&lt;img src="resource.root/bes/sm/login/img/login_banner_cz.png"&gt;<br/>
+       &lt;/div&gt;<br/>
+       &lt;div id="div_error"&gt;&lt;/div&gt;&lt;!-- //DTS2018020903233  登录界面固定住English和Español，而不是随着语言的选择而变化，无论选择西语还是英语，都应该显示English和Español，从cookie中获取语言 --&gt; &lt;uee:fire init="" service="/SMLoginAction/getDictItems" param-locale="$.cookie()['bes_login_locale']" target="$Model.languageProperty" onafter="signin.init(this)" class="ng-scope"&gt;<br/>
+       &lt;/uee:fire&gt;<br/>
+       &lt;div class="input-box uee-block u-container-grid ng-scope col1 responsive"&gt;<br/>
+        &lt;div class="login-form-droplist"&gt;<br/>
+         &lt;div class="form-control form-droplist" id="loginAccountTypes" style="margin-left: 220px"&gt;&lt;select id="accountTypeSelect" onchange="signin.accountTypeOnChange(this.options[this.options.selectedIndex].value)"&gt; &lt;/select&gt;<br/>
+         &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="ng-scope uee-field uee" label="SM.LOGIN.LABEL.USERNAME" required id="uee-name" display="none" style="display: none;"&gt;<br/>
+         &lt;div class="uee-field-req"&gt;<br/>
+          &lt;span ng-show="true" class=""&gt;*&lt;/span&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="uee-field-label" style="width: 100px;"&gt;&lt;label class="ng-binding userNameLabel" ng-bind="$Model.login_user_name"&gt;Cuenta&lt;/label&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="uee-field-body"&gt;&lt;input class="uee-input uee-input-normal ng-scope" ueetips="" name="$Model.name" ng-disabled="getDisable()" onfocus="jBME.EFT.onfocus(this)" onblur="signin.getSignIn()" id="ipt_name" property="$Model.name" validator="required" style="width:400px;" autocomplete="off"&gt;<br/>
+         &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="uee-block u-container-grid ng-scope responsive" cols="2" id="uee-password" display="none" style="display: none;"&gt;<br/>
+         &lt;div class="ng-scope uee-field uee" label="SM.LOGIN.LABEL.PASSWORD" required style="width:295px;"&gt;<br/>
+          &lt;div class="uee-field-req"&gt;<br/>
+           &lt;span ng-show="true" class=""&gt;*&lt;/span&gt;<br/>
+          &lt;/div&gt;<br/>
+          &lt;div class="uee-field-label" style="width: 100px;"&gt;&lt;label class="ng-binding pwdLabel" ng-bind="$Model.login_user_pwd"&gt;Contraseña&lt;/label&gt;<br/>
+          &lt;/div&gt;<br/>
+          &lt;div class="uee-field-body"&gt;&lt;input class="uee-input uee-input-normal ng-scope" ueetips="" name="$Model.pwd" ng-disabled="getDisable()" onfocus="jBME.EFT.onfocus(this)" onblur="jBME.EFT.onblur(this)" id="ipt_pwd" property="$Model.pwd" validator="required" type="password" autocomplete="off"&gt;<br/>
+          &lt;/div&gt;<br/>
+         &lt;/div&gt;&lt;a class="ng-scope uee-link ng-binding forgetPwdLabel" uee-transclude="" value="SM.LOGIN.LABEL.FORGOTPASSWORD" target="_self" url="forgetpwd.html" href="forgetpwd.html" ng-bind="$Model.login_forget_pwd" style="display:none;"&gt;Olvidó contraseña?&lt;/a&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="forget_pwd"&gt;&lt;!--DTS2017071909659  登录页面的找回密码功能屏蔽<br/>
+					    		 &lt;a class="ng-scope uee-link ng-binding forgetPwdLabel" uee-transclude="" value="SM.LOGIN.LABEL.FORGOTPASSWORD" target="_self" url="forgetpwd.html" href="forgetpwd.html" ng-bind="$Model.login_forget_pwd" &gt;		<br/>
+							  &lt;/a&gt;--&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="ng-scope uee-field uee" id="vcodeField" label="SM.LOGIN.LABEL.VCODE" required="true" style="display: none;position:relative"&gt;<br/>
+         &lt;div class="uee-field-req"&gt;<br/>
+          &lt;span ng-show="true" class=""&gt;*&lt;/span&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="uee-field-label" style="width: 100px;"&gt;&lt;label class="ng-binding verifyCodeLabel" ng-bind="$Model.login_verify_code"&gt;Código de Verificación&lt;/label&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="uee-field-body"&gt;<br/>
+          &lt;div class="ng-scope"&gt;&lt;!-- ngIf: $Model.langProperty == 'zh_CN' --&gt; &lt;!-- ngIf: $Model.langProperty != 'zh_CN' --&gt;&lt;input ng-if="$Model.langProperty != 'zh_CN'" class="uee-input uee-input-normal ng-scope" ueetips="" name="validate $Model.vcode" ng-disabled="getDisable()" onfocus="jBME.EFT.onfocus(this)" onblur="jBME.EFT.onblur(this)" id="validate" property="$Model.vcode" type="text" style="width:auto;"&gt;&lt;!-- end ngIf: $Model.langProperty != 'zh_CN' --&gt; &lt;img style="position: absolute;right: 20px;bottom: 9px;" id="validateimg"&gt; &lt;img style="position: absolute;right: 2px;top: 16px;" src="resource.root/bes/sm/login/img/refresh_validate_icon.png" onclick="refreshVerifycode()"&gt;<br/>
+          &lt;/div&gt;<br/>
+         &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="ng-scope uee-field uee"&gt;<br/>
+         &lt;div class="uee-field-req"&gt;<br/>
+          &lt;span ng-show="required" class="ng-hide"&gt;*&lt;/span&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="uee-field-label" style="width: 100px;"&gt;&lt;label class="ng-binding"&gt; &lt;/label&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div&gt;<br/>
+          &lt;div class="uee-field-body"&gt;&lt;!-- 2017-09-26 将登录按钮加长和上面输入框对齐 --&gt; &lt;button class="uee-button ng-scope ng-binding loginBtn" type="button" id="loginBtn" style="width: 450px; margin-left: 213px;" label="SM.LOGIN.BUTTON.LOGIN" ng-bind="$Model.login_login_btn"&gt;Iniciar sesión&lt;/button&gt;<br/>
+          &lt;/div&gt;<br/>
+          &lt;div style="float: right;margin-right: 173px;"&gt;&lt;a id="LOGIN_CRM_BASE_PLUGINS" class="uee-link" href="#" onclick="openDownLoad();"&gt;&lt;/a&gt; &lt;a id="LOGIN_DESKTOP_MANAGER_VALUE" class="uee-link" href="#" onclick="downloadClientTools();"&gt;&lt;/a&gt;<br/>
+          &lt;/div&gt;<br/>
+         &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+       &lt;/div&gt;&lt;!-- <br/>
+							&lt;div class="uee-block u-container-grid ng-scope col2 responsive" cols="2" style="margin-bottom:4px;margin-left:4px;text-align: right;display:none;"&gt;<br/>
+								&lt;label value="SM.LOGIN.LABEL.COPYRIGHT" class="ng-scope ng-binding copyRightLabel" ng-bind="$Model.login_copy_right" style="margin-right:10px;float:right;width:300px"&gt;中国移动通信 版权所有<br/>
+								&lt;/label&gt;		<br/>
+							&lt;/div&gt;<br/>
+							 --&gt; &lt;input class="uee-input uee-input-normal ng-scope" ueetips="" name="$Model.popRet" ng-disabled="getDisable()" onfocus="jBME.EFT.onfocus(this)" onblur="jBME.EFT.onblur(this)" property="$Model.popRet" display="false" id="uee-001" style="display: none;"&gt;<br/>
+      &lt;/div&gt;<br/>
+      &lt;div class="en-ch-toggle" id="localeDiv"&gt;<br/>
+       &lt;div class="uee-en-ch"&gt;<br/>
+        &lt;a locale="en_US" style="cursor:pointer" class="changelocale"&gt;English&lt;/a&gt;<br/>
+       &lt;/div&gt;<br/>
+       &lt;div class="uee-en-ch"&gt;<br/>
+        &lt;a locale="es_CO" class="active"&gt;Español&lt;/a&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;&lt;uee:fire bind="#localeDiv" selector=".changelocale" script="signin.changeLanguage(this, jEvent)" class="ng-scope"&gt;&lt;/uee:fire&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;&lt;!--&lt;div class="uee-footer"&gt;&lt;a href=""&gt;桌面管家&lt;/a&gt;&lt;a href=""&gt;CRM 基础控件&lt;/a&gt;&lt;/div&gt;--&gt;<br/>
+  &lt;/div&gt;&lt;!-- &lt;div class="uee-copyright"&gt;版权所有(C) 华为技术有限公司&lt;/div&gt; --&gt; &lt;uee:fire init="" script="test(this)" class="ng-scope"&gt;<br/>
+   &lt;script&gt;<br/>
+			   	window.refresh_labels = function($Model){<br/>
+						$Model.login_user_name = window.$UEE.i18n('SM.LOGIN.LABEL.USERNAME');<br/>
+						$Model.login_user_pwd = window.$UEE.i18n('SM.LOGIN.LABEL.PASSWORD');<br/>
+						$Model.login_forget_pwd = window.$UEE.i18n('SM.LOGIN.LABEL.FORGOTPASSWORD');						<br/>
+						$Model.login_lang = window.$UEE.i18n('SM.LOGIN.LABEL.LANG');<br/>
+						$Model.login_verify_code = window.$UEE.i18n('SM.LOGIN.LABEL.VCODE');<br/>
+						$Model.login_login_btn = window.$UEE.i18n('SM.LOGIN.BUTTON.LOGIN');<br/>
+						$Model.login_copy_right = window.$UEE.i18n('SM.LOGIN.LABEL.COPYRIGHT');<br/>
+				}<br/>
+			   	<br/>
+<br/>
+				function downloadClientTools() {<br/>
+					/*<br/>
+					if (confirm('您确认要下载安装控件吗?')) {<br/>
+						window.location = $(document).scope().$Model.pluginsUrl.PLUGINS_2_VALUE;<br/>
+					}<br/>
+					*/<br/>
+				}<br/>
+<br/>
+				function openDownLoad() {<br/>
+					var url = $(document).scope().$Model.pluginsUrl.PLUGINS_1_VALUE;<br/>
+					try {<br/>
+						clientControl.IECreate(url);<br/>
+						WebBrowser.ExecWB(45, 1);<br/>
+						return;<br/>
+					} catch (e) {<br/>
+						window.location.href = url;<br/>
+					}<br/>
+				}<br/>
+<br/>
+				function test() {<br/>
+					this.$Page.$Meta || (this.$Page.$Meta = {});<br/>
+					this.$Page.$Meta.$Validator || (this.$Page.$Meta.$Validator={});<br/>
+					this.$Page.$Meta.$Validator["$Model.name"] = {"id":"ipt_name","validator":{"required":true,"messages":{"required":$UEE.i18n('SM.LOGIN.TIPS.REQUIRED')}}};<br/>
+					this.$Page.$Meta.$Validator["$Model.pwd"] = {"id":"ipt_pwd","validator":{"required":true,"messages":{"required":$UEE.i18n('SM.LOGIN.TIPS.REQUIRED')}}};<br/>
+					<br/>
+					var title = window.$UEE.i18n('SM.LOGIN.TITLE.LOGIN_TITLE');<br/>
+					$(document).attr("title", title);<br/>
+					<br/>
+					refresh_labels(this.$Model);<br/>
+				}<br/>
+				<br/>
+		    &lt;/script&gt;<br/>
+  &lt;/uee:fire&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/sm/login/js/login_ctz.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/common/base/js/lib/RSA.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="resource.root/bes/common/base/js/algorithm/encrypt.js"&gt;&lt;/script&gt;<br/>
+  &lt;div class="bf_tips"&gt;<br/>
+   &lt;div class="head left"&gt;&lt;/div&gt;<br/>
+   &lt;div class="head right"&gt;&lt;/div&gt;<br/>
+   &lt;div class="head middle"&gt;&lt;/div&gt;<br/>
+   &lt;div class="mid"&gt;<br/>
+    &lt;div class="bf_tips_container"&gt;<br/>
+     &lt;div class="bf_tips_content"&gt;&lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="foot left"&gt;&lt;/div&gt;<br/>
+   &lt;div class="foot right"&gt;&lt;/div&gt;<br/>
+   &lt;div class="foot middle"&gt;&lt;/div&gt;<br/>
+  &lt;/div&gt;<br/>
+ &lt;/body&gt;<br/>
+&lt;/html&gt;</code></pre></div></body></html>

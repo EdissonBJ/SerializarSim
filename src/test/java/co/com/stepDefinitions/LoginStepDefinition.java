@@ -4,8 +4,10 @@ package co.com.stepDefinitions;
 
 import co.com.exceptions.ResultadoNoEsperado;
 import co.com.interactions.AbrirNavegador;
+import co.com.interactions.ClickInFrame;
 import co.com.questions.ValidacionLogin;
 import co.com.tasks.Login;
+import co.com.tasks.SeleccionarVentaOferta;
 import co.com.userInterfaces.PaginaUsuarioUI;
 import io.cucumber.java.Before;
 import io.cucumber.java.es.*;
@@ -39,11 +41,16 @@ public class LoginStepDefinition {
     @Entonces("el usuario visualizara un mensaje de login exitoso")
     public void elUsuarioVisualizaraUnMensajeDeLoginExitoso() {
         theActorInTheSpotlight().attemptsTo(
-                // Espera hasta 30 segundos a que el elemento sea visible
-                WaitUntil.the(PaginaUsuarioUI.MSJ_LOGIN, isVisible()).forNoMoreThan(30).seconds()
+                ClickInFrame.on(4, PaginaUsuarioUI.DIV_VENTA_OFERTA)
         );
 
-        theActorInTheSpotlight().should(seeThat(ValidacionLogin.validarLogin(),
-                equalTo(true)).orComplainWith(ResultadoNoEsperado.class, ResultadoNoEsperado.INICIO_SESION_FALLO));
+        // Validamos el login
+        theActorInTheSpotlight().should(seeThat(
+                ValidacionLogin.validarLogin(),
+                equalTo(true)
+        ).orComplainWith(ResultadoNoEsperado.class, ResultadoNoEsperado.INICIO_SESION_FALLO));
+
+        // Continuar con la acción original
+        theActorInTheSpotlight().attemptsTo(SeleccionarVentaOferta.enPantalla());
     }
 }
