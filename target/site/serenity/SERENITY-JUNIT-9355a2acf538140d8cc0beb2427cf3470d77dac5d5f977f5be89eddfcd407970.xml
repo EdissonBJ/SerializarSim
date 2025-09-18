@@ -1,1 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Serialización de SIM" skipped="1" tests="1" time="11.78" timestamp="2025-09-03 01:52:22"><testcase name="Flujo exitoso de serialización de SIM"><skipped/></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Serialización de SIM" skipped="0" tests="1" time="30.73" timestamp="2025-09-16 11:36:56"><testcase name="Flujo exitoso de serialización de SIM"><error message="src\test\resources\data\ordenes.xlsx (El sistema no puede encontrar el archivo especificado)" type="java.io.FileNotFoundException">src\test\resources\data\ordenes.xlsx (El sistema no puede encontrar el archivo especificado)</error><system-err>src\test\resources\data\ordenes.xlsx (El sistema no puede encontrar el archivo especificado)&#13;
+co.com.utils.Excel.leerDatosDeHojaDeExcel(Excel.java:15)&#13;
+co.com.stepDefinitions.SerializacionStepDefinition.ingreseUnNumeroDeOrdenValidoDesdeElArchivoExcel(SerializacionStepDefinition.java:37)&#13;
+✽.ingrese un número de orden válido desde el archivo Excel(file:///C:/Users/ebenavideja/Desktop/Proyectos/Automatizaciones/Serenity/SerializarSim/src/test/resources/features/serializarSim.feature:14)&#13;
+</system-err></testcase></testsuite>

@@ -7,7 +7,7 @@ Característica: Serialización de SIM
 
   Antecedentes:
     Dado que el usuario se encuentre en la pagina web
-    Y el usuario haya ingresado con sus credenciales válidas
+    Y ingrese el usuario con la clave
 
   Escenario: Flujo exitoso de serialización de SIM
     Dado que el usuario se encuentre en serializar sim

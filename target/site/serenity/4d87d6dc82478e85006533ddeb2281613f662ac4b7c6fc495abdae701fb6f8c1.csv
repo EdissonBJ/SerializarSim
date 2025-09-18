@@ -1,5 +1,2 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Serialización de SIM","Orden no encontrada","PENDING","2025-09-02T15:24:14.4821645-05:00[America/Bogota]","0.0","18.69"
-"Serialización de SIM","SIM ya registrada","PENDING","2025-09-02T15:24:34.9698799-05:00[America/Bogota]","0.0","13.67"
-"Serialización de SIM","Confirmación de entrega fallida","PENDING","2025-09-02T15:25:13.2089041-05:00[America/Bogota]","0.0","23.13"
-"Serialización de SIM","Flujo exitoso de serialización de SIM","PENDING","2025-09-03T13:52:22.5662216-05:00[America/Bogota]","0.0","11.78"
+"Serialización de SIM","Flujo exitoso de serialización de SIM","ERROR","2025-09-16T11:36:56.3494134-05:00[America/Bogota]","0.0","30.73"

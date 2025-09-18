@@ -1,7 +1,2 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Login de usuario","Login fallido por credenciales inválidas","PENDING","2025-09-02T14:49:18.2656399-05:00[America/Bogota]","0.0","9.19"
-"Login de usuario","Usuario bloqueado","PENDING","2025-09-02T14:49:28.0259021-05:00[America/Bogota]","0.0","7.12"
-"Serialización de SIM","Orden no encontrada","PENDING","2025-09-02T15:24:14.4821645-05:00[America/Bogota]","0.0","18.69"
-"Serialización de SIM","SIM ya registrada","PENDING","2025-09-02T15:24:34.9698799-05:00[America/Bogota]","0.0","13.67"
-"Serialización de SIM","Confirmación de entrega fallida","PENDING","2025-09-02T15:25:13.2089041-05:00[America/Bogota]","0.0","23.13"
-"Serialización de SIM","Flujo exitoso de serialización de SIM","PENDING","2025-09-03T13:52:22.5662216-05:00[America/Bogota]","0.0","11.78"
+"Serialización de SIM","Flujo exitoso de serialización de SIM","PENDING","2025-09-11T14:52:49.1976688-05:00[America/Bogota]","0.0","36.68"

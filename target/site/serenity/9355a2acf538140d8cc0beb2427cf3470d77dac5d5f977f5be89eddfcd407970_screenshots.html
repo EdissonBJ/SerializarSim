@@ -152,7 +152,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 03-09-2025 13:52</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 16-09-2025 11:36</span>
     <br style="clear:left"/>
 </div>
 
@@ -213,9 +213,9 @@ Para confirmar la entrega de un recurso correctamente
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon fa-2x' title='PENDING'></i></a></span>
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon fa-2x' title='ERROR'></i></a></span>
                             <span class="test-case-title">
-                                <span class="pending-color">Flujo exitoso de serializaci&oacute;n de SIM
+                                <span class="error-color">Flujo exitoso de serializaci&oacute;n de SIM
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -232,14 +232,71 @@ Para confirmar la entrega de un recurso correctamente
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">File not found exception: src\test\resources\data\ordenes.xlsx (El sistema no puede encontrar el archivo especificado)</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall"
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="bi bi-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>java.io.FileNotFoundException </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>co.com.utils.Excel.leerDatosDeHojaDeExcel(Excel.java:15)<br />co.com.stepDefinitions.SerializacionStepDefinition.ingreseUnNumeroDeOrdenValidoDesdeElArchivoExcel(SerializacionStepDefinition.java:37)<br />✽.ingrese un número de orden válido desde el archivo Excel(file:///C:/Users/ebenavideja/Desktop/Proyectos/Automatizaciones/Serenity/SerializarSim/src/test/resources/features/serializarSim.feature:14)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                    <div class="panel-body">
+                        <a href="pagesource7959767679963283582.html" target="_blank" class="btn btn-info">HTML Source</a>
+                    </div>
+            </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="a265d099e6c286996ef2ccc0fe41f2da04e81d23c427cca605b5a3433ff2c1f7.png" title=" Dado que el usuario se encuentre en la pagina web" width="1920"/>
-                <img src="a265d099e6c286996ef2ccc0fe41f2da04e81d23c427cca605b5a3433ff2c1f7.png" title=" Edi abrir navegador" width="1920"/>
-                <img src="a265d099e6c286996ef2ccc0fe41f2da04e81d23c427cca605b5a3433ff2c1f7.png" title=" Edi opens the browser at https://10.203.114.11/oc/bes/sm/login/login-colombia.html" width="1920"/>
+                <img src="7675dec8e68f2439681eebd7c0be1d6439e6a37f95c622b1aaddd5f63fad62b0.png" title=" Dado que el usuario se encuentre en la pagina web" width="1920"/>
+                <img src="7675dec8e68f2439681eebd7c0be1d6439e6a37f95c622b1aaddd5f63fad62b0.png" title=" Edi abrir navegador" width="1920"/>
+                <img src="7675dec8e68f2439681eebd7c0be1d6439e6a37f95c622b1aaddd5f63fad62b0.png" title=" Edi opens the browser at https://10.203.114.11/oc/bes/sm/login/login-colombia.html" width="1920"/>
                 <img src="7675dec8e68f2439681eebd7c0be1d6439e6a37f95c622b1aaddd5f63fad62b0.png" title=" Edi abrir navegador (completed)" width="1920"/>
                 <img src="7675dec8e68f2439681eebd7c0be1d6439e6a37f95c622b1aaddd5f63fad62b0.png" title=" Dado que el usuario se encuentre en la pagina web (completed)" width="1920"/>
-                <img src="7675dec8e68f2439681eebd7c0be1d6439e6a37f95c622b1aaddd5f63fad62b0.png" title=" Y el usuario haya ingresado con sus credenciales v&aacute;lidas: <span class='pending-color'>PENDING</span>" width="1920"/>
+                <img src="b88750a7cb724e683aa7fa567eb3c58d975f809330ff4b28ffbd8fa2cc4d79be.png" title=" Y ingrese el usuario con la clave" width="1920"/>
+                <img src="b88750a7cb724e683aa7fa567eb3c58d975f809330ff4b28ffbd8fa2cc4d79be.png" title=" Edi login" width="1920"/>
+                <img src="b88750a7cb724e683aa7fa567eb3c58d975f809330ff4b28ffbd8fa2cc4d79be.png" title=" Edi enters '101' into usuario" width="1920"/>
+                <img src="b88750a7cb724e683aa7fa567eb3c58d975f809330ff4b28ffbd8fa2cc4d79be.png" title=" Edi enters 'Abc1234%' into ingresar clave" width="1920"/>
+                <img src="f0e5672cace4e887ec0f3daa843b353752c134b0bc3fbed95c04cda6e50e5ddf.png" title=" Edi enters 'Abc1234%' into ingresar clave" width="1920"/>
+                <img src="e2423b84ef8d158edfcd98d7c53d5531aeed356181584be8f51bb2560736093c.png" title=" Edi enters 'Abc1234%' into ingresar clave (completed)" width="1920"/>
+                <img src="e2423b84ef8d158edfcd98d7c53d5531aeed356181584be8f51bb2560736093c.png" title=" Edi clicks on boton ingresar" width="1920"/>
+                <img src="b6c22130e663d69ead71ce83130a9d2c73c116dcc57585b7ac033e7908c2e3df.png" title=" Edi clicks on boton ingresar (completed)" width="1920"/>
+                <img src="07351f884b6e4f6d2c6d8f98e4fda27906adeb0f29ddf237542b5cc088767882.png" title=" Edi login (completed)" width="1920"/>
+                <img src="24ef3e3ee5401903c5b57833a7073b4a7373c81bced41f99b58a23e13f1b3013.png" title=" Y ingrese el usuario con la clave (completed)" width="1920"/>
+                <img src="3a76ee1e26cd2796d3dd495cb72f93d775e85561c9fff019b6d35f0a1032e8e4.png" title=" Dado que el usuario se encuentre en serializar sim" width="1920"/>
+                <img src="3a76ee1e26cd2796d3dd495cb72f93d775e85561c9fff019b6d35f0a1032e8e4.png" title=" Edi navegar a serializar sim" width="1920"/>
+                <img src="3a76ee1e26cd2796d3dd495cb72f93d775e85561c9fff019b6d35f0a1032e8e4.png" title=" Edi enters 'serial' into Campo de b&uacute;squeda en el men&uacute;" width="1920"/>
+                <img src="5a65a01397d328008955e17941a3f4af9afd375a0996eae59937c1e15fffa0c6.png" title=" Edi enters 'serial' into Campo de b&uacute;squeda en el men&uacute; (completed)" width="1920"/>
+                <img src="5a65a01397d328008955e17941a3f4af9afd375a0996eae59937c1e15fffa0c6.png" title=" Edi clicks on Bot&oacute;n de b&uacute;squeda en el men&uacute;" width="1920"/>
+                <img src="16efd0f3421b6e11d30b080f0c52ecc1a1888eae37a0057dbdb62fbbb1ec09f6.png" title=" Edi clicks on Bot&oacute;n de b&uacute;squeda en el men&uacute; (completed)" width="1920"/>
+                <img src="16efd0f3421b6e11d30b080f0c52ecc1a1888eae37a0057dbdb62fbbb1ec09f6.png" title=" Edi clicks on Opci&oacute;n 'Actualizar serial de recurso'" width="1920"/>
+                <img src="6a9700a1bdaf5ed3aadeb680a54e489ac42bd7b1507d7c07e641d96511ac4693.png" title=" Edi clicks on Opci&oacute;n 'Actualizar serial de recurso'" width="1920"/>
+                <img src="7f4bbec354e1a2973ffc832a2e8062a3d5131def7628af5474b3a3528d150226.png" title=" Edi clicks on Opci&oacute;n 'Actualizar serial de recurso' (completed)" width="1920"/>
+                <img src="7f4bbec354e1a2973ffc832a2e8062a3d5131def7628af5474b3a3528d150226.png" title=" Edi navegar a serializar sim (completed)" width="1920"/>
+                <img src="7f4bbec354e1a2973ffc832a2e8062a3d5131def7628af5474b3a3528d150226.png" title=" Dado que el usuario se encuentre en serializar sim (completed)" width="1920"/>
+                <img src="050bbfd09a9f29ad980c6fbe2637d07595595a9419ea4d639c0aa25ab950f073.png" title=" Cuando ingrese un n&uacute;mero de orden v&aacute;lido desde el archivo Excel: <span class='error-color'>ERROR</span>" width="1920"/>
             </div>
         </div>
 
