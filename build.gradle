@@ -40,7 +40,7 @@ test {
         include "**/*"
     }
     testLogging {
-        showStandardStreams = true
+        showStandardStreams = false
         events "passed", "skipped", "failed"
         exceptionFormat "full"
     }
@@ -48,13 +48,4 @@ test {
     systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
     finalizedBy 'aggregate'
 }
-/*test {
-//    useJUnit {
-  //      include "**///*";
-//    gradle.startParameter.continueOnFailure = true
-  //      testLogging.showStandardStreams = true
-    //    systemProperties System.getProperties()
-      //  systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
-//}
-    //finalizedBy 'aggregate'
-//}
+
