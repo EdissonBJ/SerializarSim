@@ -12,9 +12,7 @@ Característica: Serialización de SIM
   Escenario: Flujo exitoso de serialización de SIM
     Dado que el usuario se encuentre en serializar sim
     Cuando ingrese un número de orden válido desde el archivo Excel
-    Y haga clic en consultar
-    Y seleccione en el combo la opción "Venta de recurso"
-    Y elija la opción "Ingresar SIM"
+    Y elija la opción ingresar sim
     Y registre una SIM válida desde el archivo Excel
     Y haga clic en aplicar
     Y vuelva a ingresar el número de orden en el campo de consulta

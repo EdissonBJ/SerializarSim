@@ -13,6 +13,7 @@ import io.cucumber.java.es.Y;
 import co.com.tasks.serializacion.NavegarASerializarSim;
 import co.com.utils.Excel;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -30,32 +31,35 @@ public class SerializacionStepDefinition {
 
     @Cuando("ingrese un número de orden válido desde el archivo Excel")
     public void ingreseUnNumeroDeOrdenValidoDesdeElArchivoExcel()throws Exception  {
-        String rutaExcel = "src/test/resources/data/ordenes.xlsx"; // ajusta tu ruta
+        String rutaExcel = "src/test/resources/data/DatosExcel.xlsx"; // ajusta tu ruta
         String hoja = "Hoja2";
 
         // Leemos todo
         List<Map<String, String>> datos = Excel.leerDatosDeHojaDeExcel(rutaExcel, hoja);
 
         // Tomamos la primera fila de la hoja
-        String numeroOrden = datos.get(0).get("NumeroOrden");  // <-- nombre de la columna en tu Excel
+        String numeroOrden = datos.get(0).get("numeroOrden");  // <-- nombre de la columna en tu Excel
 
         theActorInTheSpotlight().attemptsTo(
                 BuscarOrden.conNumero(numeroOrden)
         );
     }
 
+    @Y("elija la opción ingresar sim")
+    public void elijaLaOpcionIngresarSim( ) throws IOException {
 
-    @Y("seleccione en el combo la opción {string}")
-    public void seleccioneEnElComboLaOpcion(String opcion) {
-        theActorInTheSpotlight().attemptsTo(
-               // SeleccionarOpcion.enElCombo(opcion)
-        );
-    }
+        String rutaExcel = "src/test/resources/data/DatosExcel.xlsx"; // ajusta tu ruta
+        String hoja = "Hoja3";
 
-    @Y("elija la opción {string}")
-    public void elijaLaOpcion(String opcion) {
+        // Leemos todo
+        List<Map<String, String>> datos = Excel.leerDatosDeHojaDeExcel(rutaExcel, hoja);
+
+        // Tomamos la primera fila de la hoja
+        String numeroSerieRecurso = datos.get(0).get("numeroSerieRecurso");  // <-- nombre de la columna en tu Excel
+
+
         theActorInTheSpotlight().attemptsTo(
-                //SeleccionarSubOpcion.enLaPantalla(opcion)
+                ConsultarOrden.buscarSerie(numeroSerieRecurso)
         );
     }
 

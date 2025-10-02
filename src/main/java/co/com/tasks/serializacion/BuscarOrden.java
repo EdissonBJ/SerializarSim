@@ -1,40 +1,46 @@
 package co.com.tasks.serializacion;
 
 import co.com.interactions.ClickInFrame;
+import co.com.interactions.serializacion.EnterInFrame;
 import co.com.userInterfaces.serializacion.PaginaSerializarUI;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.actions.Enter.theValue;
-import static net.serenitybdd.screenplay.actions.SelectFromOptions.byVisibleText;
 
 public class BuscarOrden implements Task {
 
     private final String numeroOrden;
 
-    public BuscarOrden(String numeroOrden){
-        this.numeroOrden=numeroOrden;
+    public BuscarOrden(String numeroOrden) {
+        this.numeroOrden = numeroOrden;
     }
 
     @Override
-    public <T extends Actor> void performAs(T actor){
+    public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(
+                // Ingresar número de orden
+                EnterInFrame.theValue(numeroOrden,
+                        PaginaSerializarUI.IFRAME_BUSCAR_ORDEN,
+                        PaginaSerializarUI.INPUT_NUMERO_ORDEN),
 
-                // Escribir número en el campo (dentro del iframe)
-                ClickInFrame.on(0, PaginaSerializarUI.INPUT_NUMERO_ORDEN),
-                theValue(numeroOrden).into(PaginaSerializarUI.INPUT_NUMERO_ORDEN),
+                // Abrir combo de tipo de orden
+                //ClickInFrame.on(PaginaSerializarUI.IFRAME_BUSCAR_ORDEN,PaginaSerializarUI.DROPDOWN_TIPO_ORDEN),
 
-                // Seleccionar tipo de orden
-                ClickInFrame.on(0, PaginaSerializarUI.SELECT_TIPO_ORDEN),
-                byVisibleText("Crear Subscriptor").from(PaginaSerializarUI.SELECT_TIPO_ORDEN),
+                // Seleccionar "Crear Subscriptor"
+                //ClickInFrame.on(PaginaSerializarUI.IFRAME_BUSCAR_ORDEN,PaginaSerializarUI.OPCION_CREAR_SUBSCRIPTOR),
 
-                // Click en buscar
-                ClickInFrame.on(0, PaginaSerializarUI.BOTON_BUSCAR)
+                // Dar clic en Consulta
+                ClickInFrame.on(PaginaSerializarUI.IFRAME_BUSCAR_ORDEN,
+                        PaginaSerializarUI.BTN_CONSULTA),
+                ClickInFrame.on(PaginaSerializarUI.IFRAME_BUSCAR_ORDEN,
+                        PaginaSerializarUI.BTN_ACTUALIZAR_SERIE)
         );
     }
 
-    public static BuscarOrden conNumero(String numeroOrden) {
+    public static BuscarOrden conNumero(String numeroOrden)
+    {
         return instrumented(BuscarOrden.class, numeroOrden);
     }
 }
